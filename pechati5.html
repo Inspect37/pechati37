@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Печати и Штампы — Изготовление в Иваново</title>
+<meta name="description" content="Изготовление печатей и штампов в Иваново. Срочно, качественно. Уточняйте в соцсетях.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Geologica:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0f0f0f;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #7a7a7a;
+  --paper: #f5f3ef;
+  --paper-card: #ffffff;
+  --accent: #c8360a;
+  --accent-dark: #a02a07;
+  --accent-pale: #fdf0ec;
+  --border: #e0dbd5;
+  --font-head: 'Unbounded', sans-serif;
+  --font-body: 'Geologica', sans-serif;
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow: 0 2px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 48px rgba(0,0,0,0.12);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; font-weight: 300; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,243,239,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 4vw;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.nav-logo { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.03em; white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 24px; list-style: none; flex: 1; justify-content: center; }
+.nav-links a { text-decoration: none; color: var(--ink-soft); font-size: 13px; font-weight: 400; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: var(--accent); }
+
+.nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+/* Иконки соцсетей в nav */
+.nav-social { width: 34px; height: 34px; border-radius: var(--radius); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; background: var(--paper-card); transition: border-color 0.2s, transform 0.15s; flex-shrink: 0; }
+.nav-social:hover { border-color: var(--accent); transform: translateY(-1px); }
+.nav-social svg { width: 20px; height: 20px; display: block; }
+
+.nav-contacts-btn { display: flex; align-items: center; gap: 6px; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-size: 13px; font-weight: 500; white-space: nowrap; transition: background 0.2s; }
+.nav-contacts-btn:hover { background: var(--accent-dark); }
+.nav-contacts-btn svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+/* HERO */
+.hero { padding: 72px 4vw 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1280px; margin: 0 auto; }
+.hero-badge { display: inline-block; background: var(--accent-pale); color: var(--accent); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; border: 1px solid rgba(200,54,10,0.2); }
+.hero h1 { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 18px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 16px; color: var(--ink-soft); margin-bottom: 28px; font-weight: 300; line-height: 1.6; max-width: 400px; }
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; text-decoration: none; padding: 12px 22px; border-radius: var(--radius); font-weight: 500; font-size: 14px; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-primary svg { width: 17px; height: 17px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--ink); text-decoration: none; padding: 12px 22px; border-radius: var(--radius); font-weight: 400; font-size: 14px; border: 1px solid var(--border); transition: border-color 0.2s, background 0.2s; white-space: nowrap; }
+.btn-secondary:hover { border-color: var(--ink-soft); background: rgba(0,0,0,0.03); }
+.btn-secondary svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.hero-stats { display: flex; gap: 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
+.stat-num { font-family: var(--font-head); font-size: 22px; font-weight: 700; letter-spacing: -0.03em; }
+.stat-num span { color: var(--accent); }
+.stat-label { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+
+/* Hero фото галерея */
+.hero-visual { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 190px 190px; gap: 10px; }
+.hero-photo { border-radius: var(--radius-lg); overflow: hidden; background: #e8e4de; position: relative; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo-main { grid-row: span 2; }
+.photo-badge { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.55); color: #fff; font-size: 10px; padding: 4px 10px; border-radius: 100px; backdrop-filter: blur(4px); }
+
+/* SECTION */
+section { padding: 64px 4vw; }
+.container { max-width: 1280px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.section-title { font-family: var(--font-head); font-size: clamp(20px, 2.6vw, 36px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
+.section-sub { font-size: 15px; color: var(--ink-soft); max-width: 500px; font-weight: 300; }
+
+/* WHY */
+.why-bg { background: var(--ink); }
+.why-header { margin-bottom: 36px; }
+.why-header .section-label { color: rgba(200,54,10,0.9); }
+.why-header .section-title { color: #fff; }
+.why-header .section-sub { color: rgba(255,255,255,0.4); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 2px; background: rgba(255,255,255,0.06); border-radius: var(--radius-lg); overflow: hidden; }
+.why-card { background: var(--ink); padding: 32px 26px; transition: background 0.2s; }
+.why-card:hover { background: #1a1a1a; }
+.why-icon { width: 42px; height: 42px; background: var(--accent); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.why-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.why-card h3 { font-family: var(--font-head); font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 7px; letter-spacing: -0.01em; }
+.why-card p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 14px; margin-top: 36px; }
+.service-card { background: var(--paper-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s; }
+.service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: rgba(200,54,10,0.25); }
+.service-icon-wrap { width: 42px; height: 42px; background: var(--accent-pale); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; border: 1px solid rgba(200,54,10,0.12); }
+.service-icon-wrap svg { width: 21px; height: 21px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.service-card h3 { font-family: var(--font-head); font-size: 13px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; }
+.service-card p { font-size: 13px; color: var(--ink-muted); line-height: 1.55; }
+.service-order { margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--border); }
+.service-order a { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; transition: gap 0.2s; }
+.service-order a:hover { gap: 9px; }
+.service-order a svg { width: 13px; height: 13px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* GALLERY */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
+@media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+.gallery-item { border-radius: var(--radius-lg); overflow: hidden; background: #e8e4de; position: relative; }
+.gallery-item img { width: 100%; height: 100%; object-fit: contain; display: block; background: #fff; padding: 16px; }
+.gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+.gallery-item.wide { aspect-ratio: 16/9; }
+
+/* CTA strip */
+.cta-strip { background: var(--accent); padding: 44px 4vw; }
+.cta-strip-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.cta-strip h2 { font-family: var(--font-head); font-size: clamp(18px, 2.2vw, 28px); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: 5px; }
+.cta-strip p { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; }
+.cta-strip-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-white { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); text-decoration: none; padding: 11px 20px; border-radius: var(--radius); font-weight: 600; font-size: 13px; transition: opacity 0.2s; white-space: nowrap; }
+.btn-white:hover { opacity: 0.9; }
+.btn-outline-white { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); text-decoration: none; padding: 11px 20px; border-radius: var(--radius); font-weight: 400; font-size: 13px; transition: background 0.2s; white-space: nowrap; }
+.btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+
+/* ADDRESS */
+.map-wrap { margin-top: 24px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); height: 360px; }
+.map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* CONTACTS */
+.contacts-section { background: #fff; }
+.contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 36px; align-items: start; }
+.info-items { display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px; }
+.info-item { display: flex; gap: 12px; align-items: flex-start; }
+.info-item-icon { width: 36px; height: 36px; background: var(--accent-pale); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-item-icon svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.info-item-label { font-size: 10px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+.info-item-value { font-size: 14px; color: var(--ink); margin-top: 2px; }
+.info-item-value a { color: var(--accent); text-decoration: none; }
+
+.social-btns { display: flex; flex-direction: column; gap: 9px; }
+.social-btn { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: var(--radius); text-decoration: none; font-size: 14px; font-weight: 500; border: 1px solid var(--border); background: var(--paper-card); color: var(--ink); transition: transform 0.15s, border-color 0.2s; }
+.social-btn:hover { transform: translateX(4px); }
+.social-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+.social-btn-sub { font-size: 11px; color: var(--ink-muted); font-weight: 300; margin-top: 1px; }
+.social-btn.vk { border-color: #4680c2; } .social-btn.vk:hover { background: #f0f5fc; }
+.social-btn.tg { border-color: #2aabee; } .social-btn.tg:hover { background: #f0faff; }
+.social-btn.mx { border-color: #8b5cf6; } .social-btn.mx:hover { background: #f5f0ff; }
+.social-btn.wa { border-color: #25d366; } .social-btn.wa:hover { background: #f0fbf4; }
+.social-btn.ph { border-color: var(--accent); } .social-btn.ph:hover { background: var(--accent-pale); }
+
+.how-box { background: var(--accent-pale); border: 1px solid rgba(200,54,10,0.15); border-radius: var(--radius-lg); padding: 26px; }
+.how-box-title { font-family: var(--font-head); font-size: 13px; font-weight: 600; margin-bottom: 18px; }
+.how-steps { display: flex; flex-direction: column; gap: 13px; }
+.how-step { display: flex; gap: 12px; align-items: flex-start; }
+.how-num { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.how-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+/* FOOTER */
+footer { background: #080808; padding: 44px 4vw 24px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+.footer-logo { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.03em; margin-bottom: 10px; }
+.footer-logo span { color: var(--accent); }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.28); line-height: 1.65; max-width: 240px; font-weight: 300; }
+.footer-socials { display: flex; gap: 8px; margin-top: 18px; }
+.footer-social { width: 32px; height: 32px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; text-decoration: none; }
+.footer-social:hover { border-color: rgba(255,255,255,0.3); }
+.footer-social svg { width: 18px; height: 18px; display: block; }
+.footer-col h4 { font-family: var(--font-head); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { text-decoration: none; color: rgba(255,255,255,0.45); font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 18px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: 11px; color: rgba(255,255,255,0.18); }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; padding: 40px 4vw; }
+  .hero-visual { grid-template-rows: 150px 150px; }
+  .contacts-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .nav-links { display: none; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .cta-strip-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 500px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .nav-contacts-btn span { display: none; }
+}
+
+@keyframes fade-up { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+.hero-left { animation: fade-up 0.55s ease forwards; }
+.hero-visual { animation: fade-up 0.55s 0.1s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home"><span>Печати</span> и Штампы</a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Главная</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#address">Адрес</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <!-- ВК -->
+    <a href="https://vk.com/id135171743" target="_blank" class="nav-social" title="ВКонтакте">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4680C2"/><path d="M15.684 13.518c-.382-.37-.33-.55-.033-1.02.005-.006 1.108-1.56 1.223-2.09.058-.27 0-.468-.385-.468h-1.274c-.325 0-.475.172-.564.363 0 0-.66 1.605-1.594 2.648-.302.303-.44.4-.605.4-.083 0-.203-.097-.203-.368V10.5c0-.325-.094-.5-.364-.5H9.99c-.203 0-.324.15-.324.293 0 .307.46.378.507 1.243v1.878c0 .413-.075.488-.24.488-.44 0-1.509-1.613-2.144-3.457C7.648 9.908 7.52 9.5 7.193 9.5H5.92c-.365 0-.437.172-.437.363 0 .34.44 2.025 2.05 4.253 1.073 1.543 2.585 2.384 3.962 2.384.825 0 .927-.185.927-.504V14.87c0-.365.077-.437.335-.437.19 0 .516.095 1.276.826.87.87 1.013 1.241 1.503 1.241h1.274c.365 0 .548-.185.443-.548-.116-.361-.535-.885-1.07-1.434z" fill="white"/></svg>
+    </a>
+    <!-- Телеграм -->
+    <a href="https://t.me/Oleg_Bragin37" target="_blank" class="nav-social" title="Телеграм">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M17.4 7.6l-1.8 8.5c-.13.6-.48.75-.97.47l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.55.27l.2-2.77 5.06-4.57c.22-.2-.05-.3-.34-.11L7.5 13.4l-2.64-.82c-.57-.18-.58-.57.12-.84l10.33-3.98c.47-.18.89.11.73.84h-.64z" fill="white"/></svg>
+    </a>
+    <!-- Max -->
+    <a href="https://max.ru/u/f9LHodD0cOLx20-RM-jjcTtNossAIuSyZ0SrzZs0N7OaXNa-t3lhNLl-LBk" target="_blank" class="nav-social" title="Max">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#8B5CF6"/><text x="12" y="16.5" text-anchor="middle" fill="white" font-size="13" font-weight="700" font-family="Arial">M</text></svg>
+    </a>
+    <!-- Кнопка Контакты -->
+    <a href="#contacts" class="nav-contacts-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.91 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Контакты</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding:0;">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">📍 Иваново · Работаем с 2018 года</div>
+    <h1>Печати и штампы<br>для <em>вашего</em> бизнеса</h1>
+    <p class="hero-sub">Изготавливаем печати и штампы любых видов для ИП, ООО и организаций. Срочно, качественно, по доступным ценам.</p>
+    <div class="hero-btns">
+      <a href="https://t.me/Oleg_Bragin37" target="_blank" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.91 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Уточнить цену
+      </a>
+      <a href="https://vk.com/id135171743" target="_blank" class="btn-secondary">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Написать в ВК
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">Срочно<span>!</span></div><div class="stat-label">Быстрое изготовление</div></div>
+      <div><div class="stat-num">Любые<span>!</span></div><div class="stat-label">Виды печатей</div></div>
+      <div><div class="stat-num">6<span>+</span></div><div class="stat-label">Лет на рынке</div></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-photo hero-photo-main">
+      <img src="p6.webp" alt="Примеры печатей">
+      <span class="photo-badge">Наши работы</span>
+    </div>
+    <div class="hero-photo">
+      <img src="p1.webp" alt="Печать ИП" style="object-fit:contain; padding:8px; background:#fff;">
+    </div>
+    <div class="hero-photo">
+      <img src="p3.webp" alt="Печать врача" style="object-fit:contain; padding:8px; background:#fff;">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="why-bg">
+<div class="container">
+  <div class="why-header">
+    <div class="section-label">Почему выбирают нас</div>
+    <h2 class="section-title" style="color:#fff;">Надёжно и профессионально</h2>
+    <p class="section-sub">Работаем с предпринимателями и организациями любого масштаба.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Быстро</h3>
+      <p>Срочное изготовление. Стандартный заказ — в короткие сроки. Уточняйте время в мессенджерах.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Качественно</h3>
+      <p>Полимерное клише высокой чёткости. Профессиональные оснастки. Срок службы — годы.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h3>По цене</h3>
+      <p>Конкурентные цены. Работаем с наличными и безналом. Закрывающие документы для бухгалтерии.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div>
+      <h3>Удобно</h3>
+      <p>Принимаем заказы в Телеграм, ВК, Max и по телефону. Отвечаем быстро.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
+  <div class="section-label">Наши услуги</div>
+  <h2 class="section-title">Что мы изготавливаем</h2>
+  <p class="section-sub">Цены уточняйте в соцсетях — зависит от сложности и срочности.</p>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+      <h3>Новые печати</h3>
+      <p>Разработка макета с нуля для ИП, ООО, организаций. Любой диаметр, с логотипом и защитными элементами.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3>Печать по оттиску</h3>
+      <p>Восстановление или копия существующей печати по образцу оттиска. Точное воспроизведение.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <h3>Факсимиле</h3>
+      <p>Точная копия подписи руководителя. Ускоряет документооборот.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3>Штампы</h3>
+      <p>«ОПЛАЧЕНО», «ПОЛУЧЕНО», «КОПИЯ ВЕРНА» и любые текстовые штампы для бухгалтерии и кадров.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+      <h3>Многоцветные печати</h3>
+      <p>Яркие цветные оттиски для сертификатов, дипломов, рекламных материалов.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <h3>Для врачей</h3>
+      <p>Специализированные печати для медицинских работников. Чёткий оттиск, долгий срок службы.</p>
+      <div class="service-order"><a href="#contacts">Уточнить цену <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section style="background:#fff; padding-top:56px; padding-bottom:56px;">
+<div class="container">
+  <div class="section-label">Примеры работ</div>
+  <h2 class="section-title">Наши печати и штампы</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item tall"><img src="p1.webp" alt="Печать ИП"></div>
+    <div class="gallery-item tall"><img src="p2.webp" alt="Печать ИП 2"></div>
+    <div class="gallery-item tall"><img src="p3.webp" alt="Печать врача"></div>
+    <div class="gallery-item tall"><img src="p4.webp" alt="Примеры оттисков"></div>
+    <div class="gallery-item tall"><img src="p5.webp" alt="Печать ООО"></div>
+    <div class="gallery-item tall"><img src="p6.webp" alt="Печать с гербом"></div>
+    <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=80" alt="Подписание документов" style="object-fit:cover; padding:0;"></div>
+    <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=500&q=80" alt="Документы" style="object-fit:cover; padding:0;"></div>
+    <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" alt="Бизнес" style="object-fit:cover; padding:0;"></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+<div class="cta-strip-inner">
+  <div>
+    <h2>Нужна печать? Пишите нам!</h2>
+    <p>Уточним стоимость, сроки и детали — ответим быстро</p>
+  </div>
+  <div class="cta-strip-btns">
+    <a href="https://t.me/Oleg_Bragin37" target="_blank" class="btn-white">Телеграм</a>
+    <a href="https://vk.com/id135171743" target="_blank" class="btn-outline-white">ВКонтакте</a>
+    <a href="https://max.ru/u/f9LHodD0cOLx20-RM-jjcTtNossAIuSyZ0SrzZs0N7OaXNa-t3lhNLl-LBk" target="_blank" class="btn-outline-white">Max</a>
+  </div>
+</div>
+</div>
+
+<!-- ADDRESS -->
+<section id="address" style="background:var(--paper);">
+<div class="container">
+  <div class="section-label">Где нас найти</div>
+  <h2 class="section-title">Наш адрес</h2>
+  <p class="section-sub">г. Иваново, ТРЦ Евроленд, Галерея Санкт-Петербург, павильон 527</p>
+  <div class="map-wrap">
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A&amp;source=constructor&amp;ll=41.0044%2C56.9985&amp;z=16&amp;pt=41.0044%2C56.9985,pm2rdm"
+      allowfullscreen="true"
+      loading="lazy"
+      title="ТРЦ Евроленд, Иваново">
+    </iframe>
+  </div>
+</div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="contacts-section">
+<div class="container">
+  <div class="section-label">Контакты</div>
+  <h2 class="section-title">Свяжитесь с нами</h2>
+  <p class="section-sub">Для заказа пишите в соцсети или звоните — ответим быстро.</p>
+  <div class="contacts-grid">
+    <div>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-item-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="info-item-label">Адрес</div>
+            <div class="info-item-value">г. Иваново, ТРЦ Евроленд,<br>Галерея Санкт-Петербург, пав. 527</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="info-item-label">Режим работы</div>
+            <div class="info-item-value">Пн–Пт: 10:00–19:00 · Сб–Вс: выходной</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="info-item-label">Email</div>
+            <div class="info-item-value"><a href="mailto:ivnv@pechati5.ru">ivnv@pechati5.ru</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-btns">
+        <a href="tel:+79106806720" class="social-btn ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8360a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.91 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><div style="font-weight:600;">+7 (910) 680-67-20</div><div class="social-btn-sub">+7 (493) 250-51-04</div></div>
+        </a>
+        <a href="https://t.me/Oleg_Bragin37" target="_blank" class="social-btn tg">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M17.4 7.6l-1.8 8.5c-.13.6-.48.75-.97.47l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.55.27l.2-2.77 5.06-4.57c.22-.2-.05-.3-.34-.11L7.5 13.4l-2.64-.82c-.57-.18-.58-.57.12-.84l10.33-3.98c.47-.18.89.11.73.84h-.64z" fill="white"/></svg>
+          <div><div style="font-weight:600;">Телеграм</div><div class="social-btn-sub">@Oleg_Bragin37</div></div>
+        </a>
+        <a href="https://vk.com/id135171743" target="_blank" class="social-btn vk">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4680C2"/><path d="M15.684 13.518c-.382-.37-.33-.55-.033-1.02.005-.006 1.108-1.56 1.223-2.09.058-.27 0-.468-.385-.468h-1.274c-.325 0-.475.172-.564.363 0 0-.66 1.605-1.594 2.648-.302.303-.44.4-.605.4-.083 0-.203-.097-.203-.368V10.5c0-.325-.094-.5-.364-.5H9.99c-.203 0-.324.15-.324.293 0 .307.46.378.507 1.243v1.878c0 .413-.075.488-.24.488-.44 0-1.509-1.613-2.144-3.457C7.648 9.908 7.52 9.5 7.193 9.5H5.92c-.365 0-.437.172-.437.363 0 .34.44 2.025 2.05 4.253 1.073 1.543 2.585 2.384 3.962 2.384.825 0 .927-.185.927-.504V14.87c0-.365.077-.437.335-.437.19 0 .516.095 1.276.826.87.87 1.013 1.241 1.503 1.241h1.274c.365 0 .548-.185.443-.548-.116-.361-.535-.885-1.07-1.434z" fill="white"/></svg>
+          <div><div style="font-weight:600;">ВКонтакте</div><div class="social-btn-sub">Написать в ВК</div></div>
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOLx20-RM-jjcTtNossAIuSyZ0SrzZs0N7OaXNa-t3lhNLl-LBk" target="_blank" class="social-btn mx">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#8B5CF6"/><text x="12" y="16.5" text-anchor="middle" fill="white" font-size="13" font-weight="700" font-family="Arial">M</text></svg>
+          <div><div style="font-weight:600;">Max</div><div class="social-btn-sub">Написать в Max</div></div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=79106806720" target="_blank" class="social-btn wa">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#25D366"/><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div style="font-weight:600;">WhatsApp</div><div class="social-btn-sub">+7 (910) 680-67-20</div></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="how-box">
+      <div class="how-box-title">Как сделать заказ</div>
+      <div class="how-steps">
+        <div class="how-step"><div class="how-num">1</div><div class="how-text">Напишите нам в Телеграм, ВК или Max — опишите что нужно</div></div>
+        <div class="how-step"><div class="how-num">2</div><div class="how-text">Пришлите реквизиты, оттиск или готовый макет</div></div>
+        <div class="how-step"><div class="how-num">3</div><div class="how-text">Согласуем макет и назовём точную цену и срок</div></div>
+        <div class="how-step"><div class="how-num">4</div><div class="how-text">Заберите готовую печать в павильоне 527, ТРЦ Евроленд</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo"><span>Печати</span> и Штампы</div>
+      <p class="footer-desc">Изготовление печатей и штампов в Иваново. Работаем с 2018 года.</p>
+      <div class="footer-socials">
+        <a href="https://vk.com/id135171743" target="_blank" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4680C2"/><path d="M15.684 13.518c-.382-.37-.33-.55-.033-1.02.005-.006 1.108-1.56 1.223-2.09.058-.27 0-.468-.385-.468h-1.274c-.325 0-.475.172-.564.363 0 0-.66 1.605-1.594 2.648-.302.303-.44.4-.605.4-.083 0-.203-.097-.203-.368V10.5c0-.325-.094-.5-.364-.5H9.99c-.203 0-.324.15-.324.293 0 .307.46.378.507 1.243v1.878c0 .413-.075.488-.24.488-.44 0-1.509-1.613-2.144-3.457C7.648 9.908 7.52 9.5 7.193 9.5H5.92c-.365 0-.437.172-.437.363 0 .34.44 2.025 2.05 4.253 1.073 1.543 2.585 2.384 3.962 2.384.825 0 .927-.185.927-.504V14.87c0-.365.077-.437.335-.437.19 0 .516.095 1.276.826.87.87 1.013 1.241 1.503 1.241h1.274c.365 0 .548-.185.443-.548-.116-.361-.535-.885-1.07-1.434z" fill="white"/></svg>
+        </a>
+        <a href="https://t.me/Oleg_Bragin37" target="_blank" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M17.4 7.6l-1.8 8.5c-.13.6-.48.75-.97.47l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.55.27l.2-2.77 5.06-4.57c.22-.2-.05-.3-.34-.11L7.5 13.4l-2.64-.82c-.57-.18-.58-.57.12-.84l10.33-3.98c.47-.18.89.11.73.84h-.64z" fill="white"/></svg>
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOLx20-RM-jjcTtNossAIuSyZ0SrzZs0N7OaXNa-t3lhNLl-LBk" target="_blank" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#8B5CF6"/><text x="12" y="16.5" text-anchor="middle" fill="white" font-size="13" font-weight="700" font-family="Arial">M</text></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Услуги</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Новые печати</a></li>
+        <li><a href="#services">Печать по оттиску</a></li>
+        <li><a href="#services">Факсимиле</a></li>
+        <li><a href="#services">Штампы</a></li>
+        <li><a href="#services">Для врачей</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Информация</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#address">Адрес</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="mailto:ivnv@pechati5.ru">ivnv@pechati5.ru</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2018–2026 «Печати и Штампы». Все права защищены.</span>
+    <span>ИП Брагин Олег Юрьевич · ИНН 371102869891 · ОГРНИП 318370200003669</span>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
